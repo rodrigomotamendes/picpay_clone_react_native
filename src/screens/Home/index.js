@@ -1,17 +1,28 @@
 import React from 'react';
 
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 
-import { Wrapper, Header } from './styles';
+import { Wrapper, Container, Header, BalanceContainer, Balancetitle, Balance } from './styles';
+
+import Suggestions from '../../components/Suggestions';
 
 export default function Home() {
   return (
     <Wrapper>
-      <Header>
-        <MaterialCommunityIcons name='qrcode-scan' size={30} color="#10c86e" />
+      <Container>
+        <Header>
+          <MaterialCommunityIcons name='qrcode-scan' size={30} color="#10c86e" />
 
-        
-      </Header>
+          <BalanceContainer>
+            <Balancetitle>Meu saldo</Balancetitle>
+            <Balance>R$ 0,00</Balance>
+          </BalanceContainer>
+
+          <AntDesign name='gift' size={30} color="#10c86e" />
+        </Header>
+
+        <Suggestions />
+      </Container>
     </Wrapper>
   );
 }
